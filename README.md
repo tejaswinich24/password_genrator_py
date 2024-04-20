@@ -7,13 +7,13 @@ print("\tPASSWORD GENERATOR")
 up_case="ABCDEFGHTIJKLMNOPQRSTUVWXYZ"
 low_case=up_case.lower()
 digits="0123456789"
-symbol=";<>/:()[]{}=+-#@_$%^*!&?"
+symbol=";<>/:#@_$%^*!&"
 
 #empty string to store password
 total = ""
 
 print("How do you want password?")
-print("1.No uppercase\n2.No lowercase\n3.No digits\n4.No symbols")
+print("1.No uppercase\n2.No lowercase\n3.No digits\n4.No symbols.\n5.All included.\n")
 ch=int(input("Enter your choice: "))
 
 upper=True
@@ -29,6 +29,8 @@ if ch==3:
     num=False
 if ch==4:
     sym=False
+if ch==5:
+	pass   #for all conditions
 
 #to append characters in password acc to user's choice
 if upper:
@@ -42,9 +44,8 @@ if sym:
 
 l=int(input("Enter length for pasword: "))
 n=int(input("Enter number of passwords to be generated: "))
-
+print()
 for i in range(n):
     pas="".join(random.sample(total,l))
     print("Password ",i+1," -> ",pas)
-
-
+    
